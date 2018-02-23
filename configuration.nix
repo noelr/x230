@@ -38,17 +38,13 @@
     vimHugeX tmux fish git cmus firefox-bin thunderbird
 
     # build essentials
-    binutils gcc gnumake pkgconfig
+    binutils gcc gnumake pkgconfig stdenv openssl zlib
 
     # run binaries
     pkgs.steam pkgs.steam-run
 
-    nextcloud-client
-
     # iPhone
     libimobiledevice usbmuxd ifuse
-
-    wine winetricks
   ];
 
   nixpkgs.config.allowUnfree = true;
