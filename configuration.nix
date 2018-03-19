@@ -35,22 +35,10 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    vimHugeX tmux fish git cmus firefox-bin thunderbird
-
-    # build essentials
-    binutils gcc gnumake pkgconfig stdenv openssl zlib
-
-    # run binaries
-    pkgs.steam pkgs.steam-run
-
-    # iPhone
-    libimobiledevice usbmuxd ifuse
+    vimHugeX fish tmux git
+    firefox-bin
   ];
-
   nixpkgs.config.allowUnfree = true;
-
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -70,19 +58,17 @@
   # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
+  # Enable the Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
 
@@ -91,7 +77,7 @@
     description = "Noel Rohrbach";
     isNormalUser = true;
     uid = 1000;
-    extraGroups = ["wheel"];
+    extraGroups = [ "wheel" ];
   };
 
   # This value determines the NixOS release with which your system is to be

@@ -29,7 +29,7 @@ set termguicolors
 set background=dark
 set list listchars=tab:»·,trail:· " Display extra whitespace
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-set clipboard=unnamedplus
+set mouse=
 
 colorscheme solarized8
 

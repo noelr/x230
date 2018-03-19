@@ -1,11 +1,9 @@
 [user]
   name = Noel Rohrbach
-  email = hello@noelr.ch
+  email = noel@noelr.ch
 [core]
   editor = vim
 [alias]
   s = status
   ci = commit --verbose
   unwip  = reset --soft HEAD^
-[github]
-  user = noelr
