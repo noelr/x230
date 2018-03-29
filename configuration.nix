@@ -35,7 +35,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    vim fish tmux git
+    vimHugeX fish tmux git
+    pitivi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

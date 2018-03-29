@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'lifepillar/vim-solarized8'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-syntastic/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()
 
@@ -44,3 +47,5 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+let g:ctrlp_map = ',f'
