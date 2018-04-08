@@ -1,15 +1,23 @@
 {
-  # packageOverrides = pkgs: with pkgs; {
-  #   myPackages = pkgs.buildEnv {
-  #     name = "my-packages";
-  #     paths = [
-  #       vimHugeX fish tmux git
-  #       cmus
-  #       firefoxWrapper
-  #       signal-desktop
-  #       ghc cabal-install cabal2nix haskellPackages.hdevtools hlint
-  #     ];
-  #   };
-  # };
+  packageOverrides = pkgs: with pkgs; {
+    myHaskell = pkgs.buildEnv {
+      name = "my-haskell";
+      paths = [
+         ghc cabal-install cabal2nix hlint haskellPackages.hdevtools
+      ];
+    };
+    myPhoenix = pkgs.buildEnv {
+      name = "my-phoenix";
+      paths = [
+         elixir nodejs postgresql
+      ];
+    };
+    myRails = pkgs.buildEnv {
+      name = "my-rails";
+      paths = [
+         ruby_2_4 bundix nodejs postgresql
+      ];
+    };
+  };
   allowUnfree = true;
 }

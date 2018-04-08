@@ -31,8 +31,11 @@ set winwidth=105
 set termguicolors
 set background=dark
 set list listchars=tab:»·,trail:· " Display extra whitespace
+set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set mouse=
+set path+=`pwd`** " gf
+set isfname-=. " gf
 
 colorscheme solarized8
 
@@ -49,3 +52,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 let g:ctrlp_map = ',f'
+
+augroup haskell
+  autocmd FileType haskell setlocal suffixesadd=.hs
+augroup END

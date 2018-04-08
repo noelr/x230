@@ -7,3 +7,4 @@
   s = status
   ci = commit --verbose
   unwip  = reset --soft HEAD^
+  co = checkout

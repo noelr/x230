@@ -37,6 +37,11 @@
   environment.systemPackages = with pkgs; [
     vimHugeX fish tmux git
     pitivi
+
+    firefoxWrapper
+    signal-desktop
+    cmus
+    nextcloud-client
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -83,6 +88,5 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "17.09"; # Did you read the comment?
-
+  system.stateVersion = "18.03"; # Did you read the comment?
 }
