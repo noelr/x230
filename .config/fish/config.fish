@@ -1,4 +1,4 @@
-set -U fish_user_paths ~/.local/bin $fish_user_paths
+set PATH ~/.local/bin $PATH
 
 function fish_right_prompt
   set_color blue

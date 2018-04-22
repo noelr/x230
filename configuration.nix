@@ -36,13 +36,22 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     vimHugeX fish tmux git
+    gnupg
+    gnome3.gnome-boxes
+
     pitivi
+
+    sshfs-fuse
 
     firefoxWrapper
     signal-desktop
     cmus
     nextcloud-client
   ];
+
+  environment.etc."fuse.conf".text = ''
+    user_allow_other
+  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
