@@ -3,8 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'lifepillar/vim-solarized8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -51,8 +50,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-let g:ctrlp_map = ',f'
+nnoremap <leader>f :FZF<CR>
 
 augroup haskell
   autocmd FileType haskell setlocal suffixesadd=.hs

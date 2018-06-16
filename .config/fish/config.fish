@@ -1,4 +1,4 @@
-set PATH ~/.local/bin $PATH
+set -x FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git'
 
 function fish_right_prompt
   set_color blue
