@@ -36,10 +36,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vimHugeX tmux fish git
+    ranger cmus
     fd fzf
     firefoxWrapper
-    nextcloud-client signal-desktop slack
-    ghc cabal-install
+    signal-desktop slack
+    # nextcloud-client
+    ghc cabal-install haskellPackages.ghcid haskellPackages.hlint haskellPackages.brittany
     crawl
   ];
   nixpkgs.config.allowUnfree = true;
@@ -62,10 +64,12 @@
   # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplip ];
+  services.avahi.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
+  sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.

@@ -4,6 +4,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
