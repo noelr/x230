@@ -37,14 +37,17 @@
   environment.systemPackages = with pkgs; [
     vimHugeX tmux fish git
     ranger cmus
+    powertop
     fd fzf
     firefoxWrapper
     signal-desktop slack
-    # nextcloud-client
+    nextcloud-client
     ghc cabal-install haskellPackages.ghcid haskellPackages.hlint haskellPackages.brittany
     crawl
+    pandoc
   ];
   nixpkgs.config.allowUnfree = true;
+  powerManagement.powertop.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

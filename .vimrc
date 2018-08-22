@@ -5,6 +5,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf'
 Plug 'sbdchd/neoformat'
+Plug 'janko-m/vim-test'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -35,8 +37,6 @@ set laststatus=2
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 set mouse=
-set path+=`pwd`** " gf
-set isfname-=. " gf
 
 colorscheme solarized8
 
@@ -53,6 +53,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>f :FZF<CR>
 
-augroup haskell
-  autocmd FileType haskell setlocal suffixesadd=.hs
-augroup END
+let test#strategy = "vimterminal"
+nnoremap <silent> <leader>s :TestNearest<CR>
+nnoremap <silent> <leader>a :TestFile<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
