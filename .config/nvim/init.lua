@@ -448,6 +448,11 @@ cmp.setup {
 }
 
 vim.keymap.set('i', '<c-l>', '<Plug>luasnip-expand-or-jump', { silent = false })
+vim.keymap.set('i', '<c-k>', function()
+  if luasnip.jumpable(-1) then
+    luasnip.jump(-1)
+  end
+end, { silent = false })
 
 --vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 vim.cmd("inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>")
