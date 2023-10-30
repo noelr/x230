@@ -144,6 +144,7 @@ vim.api.nvim_create_autocmd("TermOpen", { command = "setlocal nonumber" })
 vim.keymap.set('i', '<c-c>', '<esc>', { silent = true })
 vim.keymap.set('n', '<c-c>', '<cmd>:nohlsearch<CR>', { silent = true })
 vim.keymap.set('n', '<c-w><space>', '14<c-w>+', { silent = false })
+vim.api.nvim_set_keymap("n", "<leader><leader>", "<cmd>e ~/.config/nvim/init.lua<CR>", { noremap = true, silent = true })
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
