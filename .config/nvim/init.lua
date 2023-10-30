@@ -138,6 +138,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.opt.scrolloff = 5
 vim.opt.winwidth = 105
 vim.opt.wrap = false
+vim.cmd("set list listchars=tab:»·,trail:·") -- Display extra whitespace. Lua kann » irgendwie nicht
 
 vim.api.nvim_create_autocmd("TermOpen", { command = "setlocal nonumber" })
 
