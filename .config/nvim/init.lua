@@ -208,15 +208,15 @@ require("lazy").setup({
               ["[]"] = "@class.outer",
             },
           },
-          swap = {
-            enable = true,
-            swap_next = {
-              ["<leader>a"] = "@parameter.inner",
-            },
-            swap_previous = {
-              ["<leader>A"] = "@parameter.inner",
-            },
-          },
+          -- swap = {
+          --   enable = true,
+          --   swap_next = {
+          --     ["<leader>a"] = "@parameter.inner",
+          --   },
+          --   swap_previous = {
+          --     ["<leader>A"] = "@parameter.inner",
+          --   },
+          -- },
         },
       })
     end,
@@ -459,9 +459,38 @@ require("lspconfig").sourcekit.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
 require("lspconfig").fsautocomplete.setup({
   capabilities = capabilities,
   on_attach = on_attach,
+})
+
+require("lspconfig").html.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require("lspconfig").cssls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require("lspconfig").tailwindcss.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require("lspconfig").graphql.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+})
+
+
+require("lspconfig").emmet_ls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 -- nvim-cmp setup
